@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting" ,
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": "fluffnstuff:beans",
+  "result": {
+    "id": "fluffnstuff:baked_beans"
+  }
+}

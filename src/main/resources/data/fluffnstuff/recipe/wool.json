@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "FFF",
+    "FFF"
+  ],
+  "key": {
+    "F": "fluffnstuff:fluff"
+  },
+  "category": "misc",
+  "result": {
+    "count": 1,
+    "id": "minecraft:white_wool"
+  }
+}

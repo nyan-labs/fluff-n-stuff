@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "fluffnstuff",
+	"version": "${version}",
+	"name": "Fluff 'n Stuff",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/fluffnstuff/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "net.nyanlabs.fluffnstuff.FluffnStuff",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "net.nyanlabs.fluffnstuff.FluffnStuffClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "net.nyanlabs.fluffnstuff.FluffnStuffDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"fluffnstuff.mixins.json",
+		{
+			"config": "fluffnstuff.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.1",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+    },
+	"suggests": {
+		"another-mod": "*"
+	}
+}
