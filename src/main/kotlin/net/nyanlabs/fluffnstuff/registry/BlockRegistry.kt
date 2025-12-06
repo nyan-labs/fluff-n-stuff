@@ -13,11 +13,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.material.MapColor
 import net.minecraft.world.level.material.PushReaction
 import net.nyanlabs.fluffnstuff.FluffnStuff
-import net.nyanlabs.fluffnstuff.block.Beans
+import net.nyanlabs.fluffnstuff.block.BeansCropBlock
 
 
 object BlockRegistry {
-  val BEANS = register("beans", ::Beans, BlockBehaviour.Properties.of()
+  val BEANS = register("beans", ::BeansCropBlock, BlockBehaviour.Properties.of()
     .mapColor(MapColor.PLANT)
     .noCollision()
     .randomTicks()
@@ -52,11 +52,11 @@ object BlockRegistry {
   }
 
   private fun keyOfBlock(name: String): ResourceKey<Block?> {
-    return ResourceKey.create<Block?>(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(FluffnStuff.MOD_ID, name))
+    return ResourceKey.create<Block?>(Registries.BLOCK, FluffnStuff.of(name))
   }
 
   private fun keyOfItem(name: String): ResourceKey<Item?> {
-    return ResourceKey.create<Item?>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(FluffnStuff.MOD_ID, name))
+    return ResourceKey.create<Item?>(Registries.ITEM, FluffnStuff.of(name))
   }
 
   fun init() {}

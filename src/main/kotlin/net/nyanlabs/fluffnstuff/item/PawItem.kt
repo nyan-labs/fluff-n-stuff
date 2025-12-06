@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.nyanlabs.fluffnstuff.registry.AudioRegistry
 
-class Paw(properties: Properties?) : Item(properties) {
+class PawItem(properties: Properties?) : Item(properties) {
   fun squeak(level: Level, entity: LivingEntity) {
     val pitch = 0.8f + (Math.random().toFloat() / 2);
 

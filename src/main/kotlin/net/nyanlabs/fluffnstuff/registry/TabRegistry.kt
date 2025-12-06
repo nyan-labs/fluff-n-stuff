@@ -16,7 +16,7 @@ import java.util.function.Supplier
 object TabRegistry {
   val STUFF_GROUP_KEY: ResourceKey<CreativeModeTab?> = ResourceKey.create<CreativeModeTab?>(
     BuiltInRegistries.CREATIVE_MODE_TAB.key(),
-    ResourceLocation.fromNamespaceAndPath(FluffnStuff.MOD_ID, "stuff")
+    FluffnStuff.of("stuff")
   )
 
   val STUFF_GROUP: CreativeModeTab = FabricItemGroup.builder()

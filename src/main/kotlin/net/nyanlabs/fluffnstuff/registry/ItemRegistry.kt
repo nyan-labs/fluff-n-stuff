@@ -1,7 +1,6 @@
 package net.nyanlabs.fluffnstuff.registry
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
@@ -10,6 +9,7 @@ import net.minecraft.tags.BlockTags
 import net.minecraft.tags.TagKey
 import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.effect.MobEffects
+import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
@@ -18,11 +18,10 @@ import net.minecraft.world.item.ToolMaterial
 import net.minecraft.world.item.component.Consumables
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect
 import net.nyanlabs.fluffnstuff.FluffnStuff
-import net.nyanlabs.fluffnstuff.block.Beans
-import net.nyanlabs.fluffnstuff.item.Baked_Beans
-import net.nyanlabs.fluffnstuff.item.Fluff
-import net.nyanlabs.fluffnstuff.item.Paw
-
+import net.nyanlabs.fluffnstuff.item.BakedBeansItem
+import net.nyanlabs.fluffnstuff.item.FluffItem
+import net.nyanlabs.fluffnstuff.item.PawItem
+import net.nyanlabs.fluffnstuff.item.TailItem
 
 object ItemRegistry {
   val FLUFF_REPAIRS: TagKey<Item?> = TagKey.create<Item?>(
@@ -39,14 +38,14 @@ object ItemRegistry {
   )
 
   val PAW_DAMAGE = ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(FluffnStuff.MOD_ID, "paw"));
-  val PAW = register("paw", ::Paw, Item.Properties()
+  val PAW = register("paw", ::PawItem, Item.Properties()
     .sword(FLUFF_TOOL_MATERIAL, 1.0f, 0.0f)
   )
 
-  val FLUFF = register("fluff", ::Fluff, Item.Properties())
+  val FLUFF = register("fluff", ::FluffItem, Item.Properties())
 
   val BEANS = register("beans", { properties -> BlockItem(BlockRegistry.BEANS, properties.useBlockDescriptionPrefix()) }, Item.Properties())
-  val BAKED_BEANS = register("baked_beans", ::Baked_Beans, Item.Properties()
+  val BAKED_BEANS = register("baked_beans", ::BakedBeansItem, Item.Properties()
     .food(
       FoodProperties.Builder()
         .nutrition(5)
@@ -58,8 +57,14 @@ object ItemRegistry {
     )
   )
 
+  val TAIL = register("tail", ::TailItem,
+    Item.Properties()
+      .equippable(EquipmentSlot.CHEST) 
+  )
+
+
   fun register(name: String, factory: (Item.Properties) -> Item, properties: Item.Properties): Item {
-    val item_key = ResourceKey.create<Item?>(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(FluffnStuff.MOD_ID, name))
+    val item_key = ResourceKey.create<Item?>(Registries.ITEM, FluffnStuff.of(name))
 
     return Items.registerItem(item_key, factory, properties);
   }

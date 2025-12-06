@@ -14,7 +14,7 @@ object AudioRegistry {
   val SQUEAK = register("squeak")
 
   fun register(name: String): SoundEvent? {
-    val location = ResourceLocation.fromNamespaceAndPath(FluffnStuff.MOD_ID, "squeak");
+    val location = FluffnStuff.of(name)
     val audio = SoundEvent.createVariableRangeEvent(location)
 
     return Registry.register(BuiltInRegistries.SOUND_EVENT, location, audio);

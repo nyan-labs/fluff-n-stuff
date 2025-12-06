@@ -1,12 +1,16 @@
 package net.nyanlabs.fluffnstuff
 
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.event.registry.DynamicRegistrySetupCallback
+import net.minecraft.resources.ResourceLocation
+import net.nyanlabs.fluffnstuff.accessory.TailAccessory
 import net.nyanlabs.fluffnstuff.registry.AudioRegistry
 import net.nyanlabs.fluffnstuff.registry.BlockRegistry
 import net.nyanlabs.fluffnstuff.registry.ItemRegistry
 import net.nyanlabs.fluffnstuff.registry.TabRegistry
-import org.slf4j.LoggerFactory
 import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
 
 object FluffnStuff : ModInitializer {
   val RANDOM_MESSAGES = arrayOf(":3", "paws bro paws", "haiii")
@@ -24,5 +28,10 @@ object FluffnStuff : ModInitializer {
     AudioRegistry.init()
     BlockRegistry.init()
     TabRegistry.init()
+    DynamicRegistrySetupCallback{ TailAccessory.init() }
 	}
+
+  fun of(path: String): ResourceLocation {
+    return ResourceLocation.fromNamespaceAndPath(MOD_ID, path)
+  }
 }

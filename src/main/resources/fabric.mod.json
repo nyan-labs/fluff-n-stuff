@@ -23,13 +23,13 @@
 		],
 		"client": [
 			{
-				"value": "net.nyanlabs.fluffnstuff.FluffnStuffClient",
+				"value": "net.nyanlabs.fluffnstuff.client.FluffnStuffClient",
 				"adapter": "kotlin"
 			}
 		],
 		"fabric-datagen": [
 			{
-				"value": "net.nyanlabs.fluffnstuff.FluffnStuffDataGenerator",
+				"value": "net.nyanlabs.fluffnstuff.client.FluffnStuffDataGenerator",
 				"adapter": "kotlin"
 			}
 		]
@@ -46,7 +46,9 @@
 		"minecraft": "~1.21.10",
 		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
+		"fabric-language-kotlin": "*",
+        "owo": ">=0.12.24+1.21.9",
+        "accessories": ">=1.4.2-beta+1.21.10"
     },
 	"suggests": {
 		"another-mod": "*"

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F  ",
+    "F  ",
+    " F "
+  ],
+  "key": {
+    "F": "fluffnstuff:fluff",
+    "B": "fluffnstuff:beans"
+  },
+  "category": "misc",
+  "result": {
+    "count": 1,
+    "id": "fluffnstuff:tail"
+  }
+}
