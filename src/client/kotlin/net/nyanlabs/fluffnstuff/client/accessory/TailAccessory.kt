@@ -8,6 +8,7 @@ import io.wispforest.accessories.api.client.renderers.AccessoryRenderer
 import io.wispforest.accessories.api.client.renderers.SimpleAccessoryRenderer
 import io.wispforest.accessories.api.client.rendering.Side
 import io.wispforest.accessories.api.core.AccessoryItem
+import io.wispforest.accessories.api.slot.SlotReference
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.minecraft.client.model.EntityModel

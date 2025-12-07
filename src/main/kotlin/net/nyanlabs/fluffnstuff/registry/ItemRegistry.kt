@@ -18,10 +18,10 @@ import net.minecraft.world.item.ToolMaterial
 import net.minecraft.world.item.component.Consumables
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect
 import net.nyanlabs.fluffnstuff.FluffnStuff
+import net.nyanlabs.fluffnstuff.accessory.TailAccessory
 import net.nyanlabs.fluffnstuff.item.BakedBeansItem
 import net.nyanlabs.fluffnstuff.item.FluffItem
 import net.nyanlabs.fluffnstuff.item.PawItem
-import net.nyanlabs.fluffnstuff.item.TailItem
 
 object ItemRegistry {
   val FLUFF_REPAIRS: TagKey<Item?> = TagKey.create<Item?>(
@@ -57,9 +57,9 @@ object ItemRegistry {
     )
   )
 
-  val TAIL = register("tail", ::TailItem,
+  val TAIL = register("tail", ::TailAccessory,
     Item.Properties()
-      .equippable(EquipmentSlot.CHEST) 
+//      .equippable(EquipmentSlot.CHEST)
   )
 
 

@@ -28,7 +28,6 @@ object FluffnStuff : ModInitializer {
     AudioRegistry.init()
     BlockRegistry.init()
     TabRegistry.init()
-    DynamicRegistrySetupCallback{ TailAccessory.init() }
 	}
 
   fun of(path: String): ResourceLocation {

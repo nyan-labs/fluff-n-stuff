@@ -12,9 +12,4 @@ import java.util.function.Supplier
 
 
 class TailAccessory(properties: Item.Properties) : AccessoryItem(properties) {
-  companion object {
-    fun init() {
-      AccessoryRegistry.register(ItemRegistry.TAIL, TailAccessory(Item.Properties()))
-    }
-  }
 }
